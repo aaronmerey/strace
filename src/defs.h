@@ -551,6 +551,10 @@ extern int syscall_entering_decode(struct tcb *);
 extern int syscall_entering_trace(struct tcb *, unsigned int *);
 extern void syscall_entering_finish(struct tcb *, int);
 
+extern struct iovec* arch_iovec_for_getregset(void);
+extern int trace_syscall(struct tcb *, unsigned int *);
+extern void update_personality(struct tcb *tcp, unsigned int personality);
+
 extern int syscall_exiting_decode(struct tcb *, struct timespec *);
 extern int syscall_exiting_trace(struct tcb *, struct timespec *, int);
 extern void syscall_exiting_finish(struct tcb *);
